@@ -9,14 +9,17 @@ console.log(form);
 
 
 async function handleFormSubmit(e){
-    e.preventDefault(); // Prevent event from refreshing page
+     // Prevent event from refreshing page
     console.log(e)
     let cityName = e.target.cityName.value;
     console.log(cityName);
+    
+    e.preventDefault();
 
     let cityInfo = await getWeatherInfo(cityName);
     console.log(cityInfo);
     buildWeatherCard(cityInfo);
+    
 
     // Clear the input box at the end
     e.target.cityName.value = '';
@@ -62,7 +65,7 @@ function buildWeatherCard(cityInfo){
 
         let cityTitle = document.createElement('h5');
         cityTitle.className = 'card-title';
-        cityTitle.innerHTML = cityDetails.cityName;
+        cityTitle.innerHTML = cityDetails.name;
 
         let cityDescription = document.createElement('p');
         cityDescription.className = 'card-text';
