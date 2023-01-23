@@ -52,7 +52,7 @@ function buildWeatherCard(cityInfo){
 
         // Create a top image for card
         let image = document.createElement('img')
-        image.className= 'card-img-top'
+        image.className= 'card-img-top h-50'
         image.src = 'https://flagcdn.com/w320/ca.png';
         // Add image as a child to the card
         card.append(image);
@@ -94,7 +94,7 @@ function buildWeatherCard(cityInfo){
         card.append(cardBody);
 
         let col = document.createElement('div');
-        col.className = 'col-12 col-md-6 col-lg-3 my-3';
+        col.className = 'center-align mt-3';
 
         col.append(card);
 
